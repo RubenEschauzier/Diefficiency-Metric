@@ -55,7 +55,7 @@ export class DiEfficiencyMetric {
         if (cutoffIndex == 0) {
             throw new Error(`Invalid time ${t}, should be above ${0} and below ${linSpace[linSpace.length - 1]}`);
         }
-        const integral = this.integralSimpsonsRule(distribution.slice(0, cutoffIndex + 1), linSpace.slice(0, cutoffIndex + 1));
+        const integral = this.integralTrapezoidalRule(distribution.slice(0, cutoffIndex + 1), linSpace.slice(0, cutoffIndex + 1));
         return integral;
     }
 
@@ -71,11 +71,11 @@ export class DiEfficiencyMetric {
         if (cutoffIndex == 0) {
             cutoffIndex = distribution.length - 1;
         }
-        const integral = this.integralSimpsonsRule(distribution.slice(0, cutoffIndex + 1), linSpace.slice(0, cutoffIndex + 1));
+        const integral = this.integralTrapezoidalRule(distribution.slice(0, cutoffIndex + 1), linSpace.slice(0, cutoffIndex + 1));
         return integral;
     }
 
-    static integralSimpsonsRule(distribution: number[], linSpace: number[]) {
+    static integralTrapezoidalRule(distribution: number[], linSpace: number[]) {
         let integral = 0.0;
         for (let i = 2; i < distribution.length; i++) {
             // function delta takes two timestamp parameters and calculates 
