@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-watch": "tsc -w",
     "build": "tsc",
-    "prepare": "yarn build",
+    "prepare": "npm run build",
     "build-watch:ts": "tsc --watch"
   },
   "dependencies": {
