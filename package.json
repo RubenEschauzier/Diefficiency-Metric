@@ -8,7 +8,8 @@
     "build-watch": "tsc -w",
     "build": "tsc",
     "prepare": "npm run build",
-    "build-watch:ts": "tsc --watch"
+    "build-watch:ts": "tsc --watch",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
