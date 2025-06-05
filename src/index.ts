@@ -1,1 +1,1 @@
-export * from './Dieffiency';
+export * from './Diefficiency';
