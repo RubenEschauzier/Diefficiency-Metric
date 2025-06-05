@@ -1,5 +1,7 @@
 ### Dieffiency Metric
 
+![npm version](https://img.shields.io/npm/v/diefficiency)
+
 This is an implementation of the diefficiency metrics introduced in "Diefficiency Metrics: Measuring the Continuous Efficiency of Query Processing Approaches".
 
 ## Example Usage
