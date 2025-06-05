@@ -1,6 +1,6 @@
 ### Dieffiency Metric
 
-![npm version](https://img.shields.io/npm/v/diefficiency)
+[![NPM Version](https://img.shields.io/npm/v/diefficiency?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fdiefficiency)](https://www.npmjs.com/package/diefficiency)
 
 This is an implementation of the diefficiency metrics introduced in "Diefficiency Metrics: Measuring the Continuous Efficiency of Query Processing Approaches".
 
