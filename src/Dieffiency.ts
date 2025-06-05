@@ -53,7 +53,7 @@ export class DiEfficiencyMetric {
             }
         }
         if (cutoffIndex == undefined) {
-            throw new Error(`Invalid time ${t}, should be above ${0} and below ${linSpace[linSpace.length - 1]}`);
+            throw new Error(`Invalid time ${t}, should be above or equal to ${0} and below or equal ${linSpace[linSpace.length - 1]}`);
         }
         const integral = this.integralTrapezoidalRule(distribution.slice(0, cutoffIndex + 1), linSpace.slice(0, cutoffIndex + 1));
         return integral;
