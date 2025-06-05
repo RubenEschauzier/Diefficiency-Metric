@@ -45,15 +45,15 @@ export class DiEfficiencyMetric {
     static defAtT(t: number, distribution: number[], linSpace: number[]) {
         // Note: This implementation is not completely correct, we due to rounding of t to nearest point in the linspace
         // Note: We round up to nearest point in linSpace
-        let cutoffIndex = 0;
+        let cutoffIndex = undefined;
         for (const [index, time] of linSpace.entries()) {
-            if (time > t) {
+            if (time >= t) {
                 cutoffIndex = index;
                 break;
             }
         }
-        if (cutoffIndex == 0) {
-            throw new Error(`Invalid time ${t}, should be above ${0} and below ${linSpace[linSpace.length - 1]}`);
+        if (cutoffIndex == undefined) {
+            throw new Error(`Invalid time ${t}, should be above or equal to ${0} and below or equal ${linSpace[linSpace.length - 1]}`);
         }
         const integral = this.integralTrapezoidalRule(distribution.slice(0, cutoffIndex + 1), linSpace.slice(0, cutoffIndex + 1));
         return integral;
