@@ -47,7 +47,7 @@ export class DiEfficiencyMetric {
         // Note: We round up to nearest point in linSpace
         let cutoffIndex = 0;
         for (const [index, time] of linSpace.entries()) {
-            if (time > t) {
+            if (time >= t) {
                 cutoffIndex = index;
                 break;
             }
