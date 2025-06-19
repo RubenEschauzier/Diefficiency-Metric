@@ -26,6 +26,9 @@ export class DiEfficiencyMetric {
             return answerTimings.length;
         }
         for (const [index, timing] of answerTimings.entries()) {
+            if (t === timing){
+                return index + 1;
+            }
             if (t > timing && t < answerTimings[index + 1] && answerTimings[index + 1] != undefined) {
                 return (index + 1) + (t - timing) / (answerTimings[index + 1] - timing);
             }
